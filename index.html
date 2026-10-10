@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي والشهادات</title>
+    <!-- خط عربي مميز Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -2rem auto 3rem;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* شبكة الشهادات */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .cert-issuer {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* المهارات */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>اسمك هنا (مثال: محمد خالد)</h1>
+        <p>مهندس ميكانيكا باور | مهتم بالتصميم والتطوير التقني</p>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:your-email@example.com" title="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- نبذة عني -->
+        <section>
+            <h2><i class="fas faيرات fa-user"></i> نبذة عني</h2>
+            <p class="about-text">
+                أهلاً بك في ملفي الشخصي. أنا مهندس ميكانيكا، شغوف بتطوير المهارات الهندسية والتقنية، ولدي خبرة في استخدام البرامج الهندسية المختلفة، بالإضافة إلى إتمام العديد من التدريبات والدورات المتخصصة التي تهدف لتعزيز القدرات الاحترافية.
+            </p>
+        </section>
+
+        <!-- الشهادات والدورات -->
+        <section>
+            <h2><i class="fas fa-certificate"></i> الشهادات والدورات التدريبية</h2>
+            <div class="certificates-grid">
+                
+                <!-- شهادة 1 -->
+                <div class="cert-card">
+                    <h3>اسم التدريب أو الدورة الأولى</h3>
+                    <div class="cert-issuer">الجهة المانحة (مثال: ENGX / Coursera)</div>
+                    <p>وصف مختصر للمهارات التي اكتسبتها خلال هذه الدورة أو مجال التدريب.</p>
+                    <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> عرض الشهادة</a>
+                </div>
+
+                <!-- شهادة 2 -->
+                <div class="cert-card">
+                    <h3>اسم الشهادة الثانية</h3>
+                    <div class="cert-issuer">الجهة المانحة للشهادة</div>
+                    <p>وصف مختصر للمهارات والمواضيع التي تمت تغطيتها في الشهادة.</p>
+                    <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> عرض الشهادة</a>
+                </div>
+
+                <!-- شهادة 3 -->
+                <div class="cert-card">
+                    <h3>اسم الدورة أو المشروع الثالث</h3>
+                    <div class="cert-issuer">الجهة المانحة</div>
+                    <p>وصف مختصر لأهم الإنجازات أو المشاريع ضمن التدريب.</p>
+                    <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> عرض الشهادة</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- المهارات والأدوات -->
+        <section>
+            <h2><i class="fas fa-tools"></i> المهارات والبرامج</h2>
+            <div class="skills-list">
+                <span class="skill-tag">AutoCAD</span>
+                <span class="skill-tag">Revit MEP</span>
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">HAP</span>
+                <span class="skill-tag">HVAC Design</span>
+            </div>
+        </section>
+
+        <!-- التواصل -->
+        <section>
+            <h2><i class="fas fa-paper-plane"></i> تواصل معي</h2>
+            <p class="about-text">
+                يسعدني التواصل معك لأي فرص عمل، تعاون، أو استفسارات مهنية. يمكنك مراسلتي مباشرة عبر البريد الإلكتروني أو ربط الحسابات الشخصية في أعلى الصفحة.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
